@@ -1,28 +1,19 @@
 const transpose = function(matrix) {
-  let line = [];
-  let matrixArr = [];
-  console.log('matrix:', matrix);
-  for (let i = 0; i < matrix[0].length; i++) {
+  let matrixTrans;
 
-    for (let j = 0; j < matrix.length; j++) {
-      line.push(matrix[j][i]);
-    }
+  matrixTrans = matrix[0].map((_, colIndex) =>
+    matrix.map(row => row[colIndex]));
 
-    matrixArr.push(line);
-    line = [];
-
-  }
-  console.log('matrixArr:', matrixArr);
-  return matrixArr;
+  return matrixTrans;
 };
 
-const searchJoinedArray = (array, word) => {
+const searchJoinedArray = function(array, word) {
   let joined = array.map(ls => ls.join(''));
-  
+
   for (const l of joined) {
     if (l.includes(word)) return true;
   }
-  
+
   return false;
 };
 
